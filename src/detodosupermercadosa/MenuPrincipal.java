@@ -30,7 +30,6 @@ public static TreeSet<Producto> listaProductos=new TreeSet<>();
         jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
         Escritorio.setPreferredSize(new java.awt.Dimension(800, 600));
 
@@ -76,6 +75,11 @@ public static TreeSet<Producto> listaProductos=new TreeSet<>();
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setText("Por precio");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuBar1.add(jMenu2);
@@ -112,11 +116,20 @@ public static TreeSet<Producto> listaProductos=new TreeSet<>();
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         Escritorio.removeAll();
         Escritorio.repaint();
-        BusquedaPorRubroView bpn = new BusquedaPorRubroView();
-        bpn.setVisible(true);
-        Escritorio.add(bpn);
-        Escritorio.moveToFront(bpn);
+        BusquedaPorRubroView bpr = new BusquedaPorRubroView();
+        bpr.setVisible(true);
+        Escritorio.add(bpr);
+        Escritorio.moveToFront(bpr);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        Escritorio.removeAll();
+        Escritorio.repaint();
+        BusquedaPorPrecioView bpp = new BusquedaPorPrecioView();
+        bpp.setVisible(true);
+        Escritorio.add(bpp);
+        Escritorio.moveToFront(bpp);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     public static void main(String args[]) {
         
